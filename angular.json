@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-download-trigger": {
+      "projectType": "library",
+      "root": "projects/ngx-download-trigger",
+      "sourceRoot": "projects/ngx-download-trigger/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ngx-download-trigger/tsconfig.lib.json",
+            "project": "projects/ngx-download-trigger/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-download-trigger/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-download-trigger/src/test.ts",
+            "tsConfig": "projects/ngx-download-trigger/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-download-trigger/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-download-trigger/tsconfig.lib.json",
+              "projects/ngx-download-trigger/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-download-trigger"
 }

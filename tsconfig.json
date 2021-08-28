@@ -10,6 +10,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "ngx-download-trigger": [
+        "dist/ngx-download-trigger/ngx-download-trigger",
+        "dist/ngx-download-trigger"
+      ]
+    },
     "target": "es2015",
     "module": "es2020",
     "lib": [
